@@ -1,0 +1,31 @@
+.au { min-height: 100vh; display: grid; grid-template-columns: 1.1fr 1fr; }
+.au__hero { position: relative; overflow: hidden; color: #fff; padding: 56px; display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(140deg, #052a55, #0a7fd8 60%, #19b4f5); }
+.au__logo { width: 150px; background: #fff; padding: 10px 14px; border-radius: 14px; margin-bottom: 36px; align-self: flex-start; position: relative; z-index: 1; }
+.au__hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 16px; position: relative; z-index: 1; }
+.au__hero p { max-width: 440px; opacity: .9; line-height: 1.6; position: relative; z-index: 1; }
+.au__hero ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; position: relative; z-index: 1; }
+.au__hero li::before { content: "✓"; display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 10px; border-radius: 50%; background: #ffffff30; font-size: 12px; }
+.au__bubble { position: absolute; border-radius: 50%; background: #ffffff14; }
+.au__bubble--a { width: 380px; height: 380px; right: -120px; top: -120px; }
+.au__bubble--b { width: 260px; height: 260px; left: -80px; bottom: -80px; }
+
+.au__panel { display: grid; place-items: center; padding: 28px; }
+.au__card { width: 100%; max-width: 400px; display: grid; gap: 14px; }
+.au__card h2 { margin: 0; font-size: 28px; }
+.au__sub { margin: -6px 0 6px; color: var(--muted); }
+.au__card label { display: grid; gap: 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.au__card input { padding: 13px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); outline: none; }
+.au__card input:focus { border-color: var(--blue); box-shadow: 0 0 0 4px #0a7fd822; }
+.au__btn { padding: 14px; border: 0; border-radius: 12px; color: #fff; font-weight: 700; background: linear-gradient(135deg, #0a7fd8, #19b4f5); box-shadow: 0 8px 20px #0a7fd855; }
+.au__btn:disabled { opacity: .6; }
+.au__error { margin: 0; padding: 10px 12px; border-radius: 10px; background: #fee2e2; color: var(--bad); font-size: 14px; }
+.au__switch { text-align: center; color: var(--muted); font-size: 14px; }
+.au__switch button { background: none; border: 0; color: var(--blue); font-weight: 700; }
+
+@media (max-width: 800px) {
+  .au { grid-template-columns: 1fr; }
+  .au__hero { padding: 32px 24px; }
+  .au__hero h1 { font-size: 30px; }
+  .au__hero ul { display: none; }
+}

@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --ink: #0b1b2e;
+  --muted: #5b6b7e;
+  --blue-deep: #0a3d7a;
+  --blue: #0a7fd8;
+  --blue-light: #19b4f5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background: #ffffff;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.start {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.start * {
+  box-sizing: border-box;
+}
+
+/* soft colour light in the background */
+.start__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+.start__blob--a {
+  top: -160px;
+  left: -120px;
+  width: 520px;
+  height: 520px;
+  background: rgba(25, 180, 245, 0.22);
+}
+.start__blob--b {
+  top: 40px;
+  right: -160px;
+  width: 560px;
+  height: 560px;
+  background: rgba(10, 127, 216, 0.16);
+}
+
+.start__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  padding: 28px 24px 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.start__logo {
+  width: 210px;
+  height: auto;
+  display: block;
+}
+
+.start__title {
+  margin: 14px 0 8px;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.start__sub {
+  margin: 0 0 34px;
+  max-width: 480px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- role cards ---------- */
+.roles {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.role {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 30px 28px 28px;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.role:hover {
+  transform: translateY(-5px);
+}
+
+.role--user {
+  background: #ffffff;
+  border: 1.5px solid #d3e5f6;
+  box-shadow: 0 18px 40px rgba(10, 127, 216, 0.12);
+}
+.role--user:hover {
+  box-shadow: 0 24px 50px rgba(10, 127, 216, 0.22);
+}
+
+.role--admin {
+  color: #ffffff;
+  background: linear-gradient(145deg, #0a3d7a 0%, #0a68c2 100%);
+  box-shadow: 0 18px 40px rgba(10, 61, 122, 0.3);
+}
+.role--admin:hover {
+  box-shadow: 0 24px 50px rgba(10, 61, 122, 0.42);
+}
+/* big faint water drop behind the admin card */
+.role--admin::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -60px;
+  width: 190px;
+  height: 190px;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.role__icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+.role--user .role__icon {
+  background: linear-gradient(135deg, var(--blue-light), var(--blue));
+  box-shadow: 0 8px 18px rgba(10, 127, 216, 0.3);
+}
+.role--admin .role__icon {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.role__title {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.role__text {
+  margin: 0 0 26px;
+  flex: 1;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.role--admin .role__text {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.role__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.role--user .role__btn {
+  color: #ffffff;
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+}
+.role--admin .role__btn {
+  color: var(--blue-deep);
+  background: #ffffff;
+}
+.role__btn:hover {
+  filter: brightness(1.06);
+}
+.role__btn:hover svg {
+  transform: translateX(3px);
+}
+.role__btn svg {
+  transition: transform 0.2s ease;
+}
+.role__btn:focus-visible {
+  outline: 3px solid var(--blue-light);
+  outline-offset: 3px;
+}
+
+/* ---------- feature chips ---------- */
+.chips {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d3e5f6;
+  border-radius: 999px;
+}
+.chips svg {
+  color: var(--blue);
+}
+
+/* ---------- water waves (the one moving element) ---------- */
+.waves {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 190px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+  animation: drift 20s linear infinite;
+}
+.wave--1 {
+  animation-duration: 30s;
+  animation-direction: reverse;
+  bottom: 14px;
+}
+.wave--2 {
+  animation-duration: 22s;
+  bottom: -6px;
+}
+.wave--3 {
+  animation-duration: 15s;
+  bottom: -26px;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.waves__foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 720px) {
+  .roles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .start__content {
+    padding: 20px 18px 210px;
+  }
+  .start__logo {
+    width: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave {
+    animation: none;
+  }
+  .role,
+  .role__btn svg {
+    transition: none;
+  }
+}

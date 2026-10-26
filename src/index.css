@@ -1,0 +1,27 @@
+:root {
+  --blue: #0a7fd8;
+  --navy: #07203f;
+  --bg: #f1f6fb;
+  --ink: #0f2742;
+  --muted: #6b8097;
+  --line: #e3edf6;
+  --ok: #16a34a;
+  --warn: #d98a00;
+  --bad: #dc2626;
+}
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-height: 100%; }
+body { font-family: system-ui, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); }
+button, input, select, textarea { font-family: inherit; font-size: 15px; }
+button { cursor: pointer; }
+
+.pill { display: inline-block; padding: 4px 11px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.pill--ok { background: #dcfce7; color: var(--ok); }
+.pill--warn { background: #fef3c7; color: var(--warn); }
+.pill--bad { background: #fee2e2; color: var(--bad); }
+.pill--info { background: #dbeafe; color: var(--blue); }
+
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.dot--ok { background: var(--ok); box-shadow: 0 0 0 4px #16a34a22; }
+.dot--warn { background: var(--warn); }
+.dot--bad { background: var(--bad); box-shadow: 0 0 0 4px #dc262622; }
